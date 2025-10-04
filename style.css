@@ -1,0 +1,521 @@
+/* style.css - Premium Perfume Shop with Luxurious Color Scheme */
+:root {
+  --primary: #8B5A2B; /* Rich brown */
+  --primary-dark: #6B4423;
+  --secondary: #C9A96E; /* Warm gold */
+  --accent: #A67C52; /* Muted bronze */
+  --light: #F8F4F0; /* Cream white */
+  --dark: #2C1810; /* Deep brown */
+  --text: #3E2723; /* Dark chocolate */
+  --gold: #D4AF37; /* Metallic gold */
+  --silver: #C0C0C0;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: linear-gradient(135deg, #F8F4F0 0%, #E8DFD6 100%);
+  overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition);
+  border-bottom: 1px solid rgba(139, 90, 43, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav-link {
+  color: var(--text);
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary);
+}
+
+/* .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--secondary);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+} */
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(43, 24, 16, 0.85), rgba(67, 37, 25, 0.9)), 
+              url('https://images.unsplash.com/photo-1547887537-6158d64c35b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 8rem 0 4rem;
+  margin-top: 76px;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: slideUp 1s ease;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  animation: slideUp 1s ease 0.2s both;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* Perfume Cards */
+.perfume-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.perfume-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  animation: fadeInUp 0.6s ease;
+  position: relative;
+  border: 1px solid rgba(139, 90, 43, 0.1);
+}
+
+.perfume-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.perfume-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.1), transparent);
+  transition: var(--transition);
+}
+
+.perfume-card:hover::before {
+  left: 100%;
+}
+
+.perfume-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.perfume-card:hover .perfume-image {
+  transform: scale(1.1);
+}
+
+.perfume-info {
+  padding: 1.5rem;
+}
+
+.perfume-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.perfume-brand {
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.perfume-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background: var(--secondary);
+  color: var(--dark);
+  border: 1px solid var(--secondary);
+  font-weight: 600;
+}
+
+.btn-gold:hover {
+  background: #B89446;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(201, 169, 110, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Loading Animation */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Cart Animation */
+.cart-badge {
+  animation: bounce 0.6s ease;
+}
+
+/* Form Styles */
+.auth-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: fadeInUp 0.6s ease;
+  border: 1px solid rgba(139, 90, 43, 0.1);
+}
+
+.form-control {
+  border: 1px solid rgba(139, 90, 43, 0.2);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(139, 90, 43, 0.15);
+}
+
+/* Admin Dashboard */
+.admin-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  animation: fadeInUp 0.6s ease;
+  border: 1px solid rgba(139, 90, 43, 0.1);
+  text-align: center;
+}
+
+.admin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.admin-card i {
+  color: var(--secondary);
+}
+
+/* Footer */
+footer {
+  background: var(--dark);
+  color: #E8DFD6;
+}
+
+footer h5 {
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+footer a {
+  color: #E8DFD6;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--secondary);
+}
+
+/* Alerts */
+.alert {
+  border-radius: var(--radius);
+  border: none;
+}
+
+.alert-danger {
+  background: rgba(220, 53, 69, 0.1);
+  color: #721c24;
+}
+
+.alert-success {
+  background: rgba(40, 167, 69, 0.1);
+  color: #155724;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .perfume-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero {
+    padding: 6rem 0 2rem;
+  }
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Floating Animation */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Pulse Animation */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Login page specific styles */
+.login-bg {
+  background: linear-gradient(rgba(43, 24, 16, 0.85), rgba(67, 37, 25, 0.9)), 
+              url('https://images.unsplash.com/photo-1547887537-6158d64c35b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Admin Dashboard Styles */
+.admin-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+}
+
+.admin-card h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.admin-card p {
+    color: #7f8c8d;
+    margin-bottom: 0;
+}
+
+/* Table Styles */
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+    color: #2c3e50;
+    background: #f8f9fa;
+}
+
+/* Form Styles */
+.form-control {
+    border: 2px solid #ecf0f1;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+/* Badge Styles */
+.badge {
+    font-size: 0.75em;
+    padding: 0.5em 0.75em;
+}
+
+/* Order Status Colors */
+.badge.bg-warning { background-color: #f39c12 !important; }
+.badge.bg-info { background-color: #3498db !important; }
+.badge.bg-success { background-color: #27ae60 !important; }
+.badge.bg-secondary { background-color: #95a5a6 !important; }
+
+/* Responsive Table */
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Checkout Form Styles */
+.form-label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+/* Order Summary Styles */
+.border-bottom {
+    border-color: #ecf0f1 !important;
+}
+
+/* Print Styles for Order Confirmation */
+@media print {
+    .navbar, .btn, footer {
+        display: none !important;
+    }
+    
+    .admin-card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+}
