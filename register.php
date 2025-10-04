@@ -52,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $mail->isSMTP();
                         $mail->Host       = 'smtp.gmail.com';
                         $mail->SMTPAuth   = true;
-                        $mail->Username   = 'aaallliii77992186@gmail.com'; // Your Gmail
-                        $mail->Password   = 'zjks ggym cxwd kynz';         // Your Gmail App Password
+                        $mail->Username   = ''; // Your Gmail
+                        $mail->Password   = '';         // Your Gmail App Password
                         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                         $mail->Port       = 587;
                         $mail->SMTPDebug  = 0; // Set to 2 for detailed debugging
@@ -74,9 +74,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $mail->CharSet = 'UTF-8';
 
                         // Recipients
-                        $mail->setFrom('aaallliii77992186@gmail.com', 'RBScents');
+                        $mail->setFrom('', 'RBScents');
                         $mail->addAddress($email, $name);
-                        $mail->addReplyTo('aaallliii77992186@gmail.com', 'RBScents');
+                        $mail->addReplyTo('', 'RBScents');
 
                         // Content
                         $mail->isHTML(true);
